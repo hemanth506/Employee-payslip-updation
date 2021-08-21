@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block div %}
+    <div class='container'>
+        <h2 class="pt-5 pb-2">{{text}}</h2>
+        <ul>
+            {% for i in compare %}
+                <li><h5>{{i}}</h5></li>
+            {% endfor %}
+        </ul>
+        <div>
+            <a href="{% url 'updatetax' %}" class='btn btn-outline-primary btn-sm'>Update Tax Percentage</a>
+        
+            <a href="{% url 'changeusertax' %}" class='btn btn-outline-secondary btn-sm'>Update Employee Tax amount</a>
+
+            <a href="{% url 'home' %}" class='btn btn-outline-primary btn-sm'>Add Employee</a>
+        </div>
+    </div>
+    
+{% endblock %}

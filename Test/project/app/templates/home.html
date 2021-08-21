@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+
+
+{% block div %}
+    <div class='container'>
+        <h2 class="pt-5 pb-2">Employee payslips</h2>
+        <form method="Post" action=''>
+            {% csrf_token %}
+            {{form.as_p}}
+            <button value='submit' class="btn btn-success" type="submit">Submit</button>
+        </form>
+        <div class="pt-5 pb-2">
+            <a href="{% url 'lessthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax lesser than 10k</a>
+        
+            <a href="{% url 'greatthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax greater than 10k</a>
+        
+            <a href="{% url 'updatetax' %}" class='btn btn-outline-primary btn-sm'>Update Tax Percentage</a>
+        
+            <a href="{% url 'changeusertax' %}" class='btn btn-outline-primary btn-sm'>Update Employee Tax amount</a>
+        </div>
+    </div>
+    
+{% endblock %}

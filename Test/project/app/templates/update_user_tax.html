@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+
+{% block div %}
+
+
+
+
+<div class='container'>
+    
+    <form method="Post" action='' class="pt-5 pb-2">
+        {% csrf_token %}
+        <button value='submit' type="submit" class="btn btn-info btn-sm">Update Employee Tax amount</button>
+    </form>
+
+
+    <h2 class="pt-5 pb-2">Employee Tax amount</h2>
+    <div>
+        {% for i in data %}
+            <p>{{i.name}} : {{i.Taxes}}</p>
+        {% endfor %}
+    </div>
+    <div>
+        <a href="{% url 'updatetax' %}" class='btn btn-outline-primary btn-sm'>Update Tax Percentage</a>
+        
+            <a href="{% url 'lessthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax lesser than 10k</a>
+        
+            <a href="{% url 'greatthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax greater than 10k</a>
+        
+            <a href="{% url 'home' %}" class='btn btn-outline-primary btn-sm'>Add Employee</a>
+        
+    </div>
+</div>
+    
+{% endblock %}

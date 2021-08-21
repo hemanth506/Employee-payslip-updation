@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+
+{% block div %}
+<div class='container'>
+    <h2 class="pt-5 pb-2">Update Tax Percent</h2>
+    <form method="Post" action=''>
+        {% csrf_token %}
+        {{form.as_p}}
+        <button value='submit' class="btn btn-primary" type="submit">Submit</button>
+    </form>
+    <div class='pt-5'>
+        <a href="{% url 'changeusertax' %}" class='btn btn-outline-secondary btn-sm'>Update Employees Tax amount</a>
+        <a href="{% url 'lessthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax lesser than 10k</a>
+        <a href="{% url 'greatthan10k' %}" class='btn btn-outline-primary btn-sm'>Get Employee tax greater than 10k</a>
+        <a href="{% url 'home' %}" class='btn btn-outline-primary btn-sm'>Add Employee</a>
+    </div>
+</div>
+{% endblock %}
